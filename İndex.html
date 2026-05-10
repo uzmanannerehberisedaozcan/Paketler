@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Uzman Anne Rehberi · Seda Özcan</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #F5F0E8;
+    --stone: #C4B49A;
+    --stone-light: #DDD0BC;
+    --dark: #2C2520;
+    --mid: #6B5E52;
+    --accent: #B5876A;
+    --accent-light: #D4A882;
+    --teal: #7AADA6;
+    --teal-light: #A8CECA;
+    --lilac: #B8A8C8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 32px 48px;
+    position: relative;
+    background: linear-gradient(160deg, #FAF7F2 0%, #F0E8DC 60%, #E8DDD0 100%);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(180,135,106,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(122,173,166,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent-light);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.4s;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--mid);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.6s;
+  }
+
+  .hero-name {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--stone);
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.8s;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 1.2s;
+  }
+
+  .scroll-hint span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 32px;
+    background: linear-gradient(to bottom, var(--stone), transparent);
+    animation: pulse 2s ease-in-out infinite 1.5s;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 56px 28px;
+  }
+
+  .section-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--dark);
+    margin-bottom: 20px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .body-text {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.75;
+  }
+
+  /* ── FARK ── */
+  .fark-section {
+    background: var(--dark);
+    padding: 56px 28px;
+  }
+
+  .fark-section .section-label { color: var(--stone-light); }
+
+  .fark-section .section-title {
+    color: var(--warm-white);
+  }
+
+  .fark-section .section-title em { color: var(--accent-light); }
+
+  .fark-section .body-text { color: var(--stone-light); }
+
+  .fark-highlight {
+    margin-top: 28px;
+    padding: 20px 20px;
+    border-left: 2px solid var(--accent);
+    background: rgba(255,255,255,0.04);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .fark-highlight p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--stone-light);
+    line-height: 1.6;
+  }
+
+  /* ── EXPERTISE CHIPS ── */
+  .expertise-section {
+    background: var(--warm-white);
+    padding: 56px 28px;
+  }
+
+  .chip-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .chip {
+    background: white;
+    border: 1px solid var(--stone-light);
+    border-radius: 24px;
+    padding: 9px 16px;
+    font-size: 13px;
+    color: var(--mid);
+    font-weight: 400;
+    transition: all 0.2s ease;
+  }
+
+  .chip:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .chip.teal { border-color: var(--teal-light); }
+  .chip.teal:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* ── APPROACH STEPS ── */
+  .step-list {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--stone-light);
+  }
+
+  .step:last-child { border-bottom: none; }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--stone-light);
+    min-width: 32px;
+    line-height: 1;
+    padding-top: 2px;
+  }
+  
+  .step-content h4 {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 5px;
+    letter-spacing: 0.3px;
+  }
+
+  .step-content p {
+    font-size: 13.5px;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  /* ── QUOTE ── */
+  .quote-section {
+    background: linear-gradient(135deg, #2C2520 0%, #3D3028 100%);
+    padding: 64px 28px;
+    text-align: center;
+  }
+
+  .quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    line-height: 0.5;
+    color: var(--accent);
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .quote-author {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  /* ── PACKAGES ── */
+  .packages-section {
+    background: var(--cream);
+    padding: 56px 28px;
+  }
+
+  /* Mini destek */
+  .mini-group {
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+
+  .group-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .mini-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mini-card {
+    background: white;
+    border: 1px solid var(--stone-light);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mini-card-left h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 2px;
+  }
+
+  .mini-card-left p {
+    font-size: 12px;
+    color: var(--mid);
+  }
+
+  .mini-card-price {
+    text-align: right;
+  }
+
+  .mini-card-price .amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--accent);
+    display: block;
+    line-height: 1.2;
+  }
+
+  .mini-card-price .kdv {
+    font-size: 10px;
+    color: var(--stone);
+  }
+
+  /* Full paketler */
+  .pkg-card {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid var(--stone-light);
+  }
+
+  .pkg-header {
+    padding: 22px 22px 18px;
+    background: white;
+  }
+
+  .pkg-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .pkg-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .pkg-desc {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .pkg-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .pkg-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .pkg-price-detail {
+    font-size: 11px;
+    color: var(--mid);
+    line-height: 1.4;
+  }
+
+  .pkg-price-detail span {
+    display: block;
+    font-weight: 500;
+  }
+
+  .pkg-body {
+    background: var(--warm-white);
+    padding: 18px 22px;
+  }
+
+  .pkg-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--stone-light);
+    font-size: 13px;
+    color: var(--mid);
+  }
+
+  .pkg-feature:last-child { border-bottom: none; }
+
+  .pkg-feature-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .icon-check { background: #E8F5E8; color: #5A9E5A; }
+  .icon-plus  { background: #FFF3E8; color: var(--accent); }
+
+  .pkg-note {
+    font-size: 11.5px;
+    color: var(--stone);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--stone-light);
+    line-height: 1.5;
+  }
+
+  /* Comparison table */
+  .compare-wrap {
+    margin-top: 40px;
+  }
+
+  .compare-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--dark);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--stone-light);
+  }
+
+  .compare-table thead tr {
+    background: var(--dark);
+  }
+
+  .compare-table thead th {
+    padding: 12px 8px;
+    color: var(--warm-white);
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    text-align: center;
+  }
+
+  .compare-table thead th:first-child {
+    text-align: left;
+    padding-left: 14px;
+    color: var(--stone-light);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .compare-table tbody tr {
+    border-bottom: 1px solid var(--stone-light);
+  }
+
+  .compare-table tbody tr:last-child { border-bottom: none; }
+
+  .compare-table tbody tr:nth-child(even) {
+    background: var(--warm-white);
+  }
+
+  .compare-table tbody td {
+    padding: 11px 8px;
+    text-align: center;
+    color: var(--mid);
+    vertical-align: middle;
+  }
+
+  .compare-table tbody td:first-child {
+    text-align: left;
+    padding-left: 14px;
+    font-size: 12px;
+    color: var(--dark);
+    font-weight: 400;
+  }
+
+  .tick { color: var(--teal); font-size: 14px; }
+  .cross { color: var(--stone-light); font-size: 12px; }
+  .dot-val { color: var(--mid); font-size: 11px; }
+
+  .col-highlight {
+    background: rgba(181,135,106,0.06);
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: linear-gradient(160deg, var(--dark) 0%, #3D3028 100%);
+    padding: 64px 28px;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .cta-title em {
+    font-style: italic;
+    color: var(--accent-light);
+  }
+
+  .cta-sub {
+    font-size: 14px;
+    color: var(--stone-light);
+    margin-bottom: 32px;
+    line-height: 1.65;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    padding: 15px 32px;
+    border-radius: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 20px rgba(181,135,106,0.35);
+  }
+
+  .cta-btn:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(181,135,106,0.45);
+  }
+
+  .cta-footer {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .cta-footer p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .divider span {
+    font-size: 12px;
+    color: var(--stone-light);
+    letter-spacing: 6px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── PACKAGE COLOR THEMES ── */
+  .pkg-tek   { --pkg-accent: var(--stone); --pkg-price-color: var(--stone); }
+  .pkg-aral  { --pkg-accent: var(--teal); --pkg-price-color: var(--teal); }
+  .pkg-std   { --pkg-accent: var(--lilac); --pkg-price-color: var(--lilac); }
+  .pkg-full  { --pkg-accent: var(--accent); --pkg-price-color: var(--accent); }
+  .pkg-vip   { --pkg-accent: #8B7355; --pkg-price-color: #8B7355; }
+
+  .pkg-tek  .pkg-tag  { color: var(--stone); }
+  .pkg-aral .pkg-tag  { color: var(--teal); }
+  .pkg-std  .pkg-tag  { color: var(--lilac); }
+  .pkg-full .pkg-tag  { color: var(--accent); }
+  .pkg-vip  .pkg-tag  { color: #8B7355; }
+
+  .pkg-tek  .pkg-price { color: var(--stone); }
+  .pkg-aral .pkg-price { color: var(--teal); }
+  .pkg-std  .pkg-price { color: var(--lilac); }
+  .pkg-full .pkg-price { color: var(--accent); }
+  .pkg-vip  .pkg-price { color: #8B7355; }
+
+  .pkg-std .pkg-header {
+    background: linear-gradient(135deg, #FAF7F2, #F0EAF8);
+  }
+
+  .best-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--lilac);
+    color: white;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+
+  .recommended-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--accent);
+    color: white;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+
+  .pkg-card.pkg-std {
+    border: 2px solid var(--lilac);
+  }
+
+  .pkg-card.pkg-full {
+    border: 2px solid var(--accent);
+    box-shadow: 0 8px 32px rgba(181,135,106,0.18);
+  }
+
+  .pkg-full .pkg-header {
+    background: linear-gradient(135deg, #FAF7F2, #F5EDE4);
+  }
+
+  .pkg-card.pkg-vip {
+    opacity: 0.82;
+    border: 1px solid var(--stone-light);
+  }
+
+  .vip-kontenjan {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #8B7355;
+    background: rgba(139,115,85,0.08);
+    border: 1px solid rgba(139,115,85,0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .pkg-profile {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.6;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    border-left: 3px solid;
+  }
+
+  .pkg-std .pkg-profile {
+    background: rgba(184,168,200,0.1);
+    border-color: var(--lilac);
+    color: #6B5E7A;
+  }
+
+  .pkg-full .pkg-profile {
+    background: rgba(181,135,106,0.08);
+    border-color: var(--accent);
+    color: var(--mid);
+  }
+
+  .pkg-vip .pkg-profile {
+    background: rgba(139,115,85,0.07);
+    border-color: #C4A882;
+    color: #6B5E52;
+  }
+
+  /* Yurt dışı note */
+  .intl-note {
+    background: white;
+    border: 1px solid var(--stone-light);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 12.5px;
+    color: var(--mid);
+    margin-top: 20px;
+    line-height: 1.55;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .intl-note .globe { font-size: 16px; flex-shrink: 0; }
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">Bebek Uyku Danışmanlığı</div>
+  <h1 class="hero-title">Uyku değil,<br><em>hayat</em><br>kuruluyor.</h1>
+  <p class="hero-sub">Bebeğinizin uykusunu değil,<br>ailenizin hayatını yeniden inşa ediyoruz.</p>
+  <p class="hero-name">Seda Özcan · Uzman Anne Rehberi</p>
+  <div class="scroll-hint">
+    <span>Kaydır</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- FARK -->
+<section class="fark-section">
+  <div class="reveal">
+    <span class="section-label">Fark Nedir?</span>
+    <h2 class="section-title">Uyku bir <em>bütündür,</em><br>tek başına ele alınmaz.</h2>
+    <p class="body-text">Çoğu uyku danışmanı size bir program verir ve uygulayıp uygulamadığınızı takip eder. Ben önce bebeğinizi ve ailenizi anlarım — duyusal profilini, beslenme düzenini, sinir sisteminin nasıl çalıştığını, aile dinamiğini, oyun ve sınır örüntülerini.</p>
+    <div class="fark-highlight">
+      <p>Uyku bu sistemin son adımıdır. Ve o son adım, ancak diğer adımlar doğru kurulduğunda kalıcı olur.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KİMİM -->
+<section class="expertise-section">
+  <div class="reveal">
+    <span class="section-label">Uzmanlık Alanlarım</span>
+    <h2 class="section-title">Size yalnızca bir <em>uyku planı</em> sunmuyorum.</h2>
+    <div class="chip-grid">
+      <div class="chip">IPHI Sertifikalı Uyku Danışmanı</div>
+      <div class="chip teal">Hemşire</div>
+      <div class="chip">Yenidoğan Hareket Analizi Uzmanı</div>
+      <div class="chip teal">Floortime Oyun Terapisti</div>
+      <div class="chip">Emzirme Danışmanı</div>
+      <div class="chip teal">Pozitif Disiplin</div>
+      <div class="chip">Duyu–Sinir Sistemi Önceliği · Bağlanma Temelli Yaklaşım</div>
+    </div>
+  </div>
+</section>
+
+<!-- YAKLAŞIM -->
+<section style="background: var(--cream); padding: 56px 28px;">
+  <div class="reveal">
+    <span class="section-label">Yaklaşımım</span>
+    <h2 class="section-title">Bebeği <em>ağlamaya bırakmak</em> hiçbir zaman yöntemim olmadı.</h2>
+    <p class="body-text" style="margin-bottom: 28px;">Klasik yöntemler çoğunlukla bebeği pasif bir nesne gibi ele alır. Ben her zaman bebeğin patron olduğuna inanıyorum.</p>
+
+    <div class="step-list">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>Uyku Ortamı & Hijyeni</h4>
+          <p>Fiziksel ortam, ışık, ses, ısı — uyku için doğru zemin kurulmadan hiçbir plan işe yaramaz.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Beslenme Düzeni</h4>
+          <p>Uyku ile beslenme arasındaki kritik ilişkiyi bütüncül olarak ele alıyorum.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Duyusal Profil & Regülasyon</h4>
+          <p>Her bebek uyaranları farklı işler. Sinir sistemini okuyarak hangi regülasyon çalışmalarının gerektiğini belirliyorum.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h4>Aile Dinamiği & Ebeveyn Tutumu</h4>
+          <p>Aile içi tutarsızlıklar, annenin psikolojik durumu, beklentiler — bunlar uyku kadar önemlidir.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h4>Oyun Alanı & Sınırlar</h4>
+          <p>Gündüz oluşturulan doğru sınırlar gece uyku sınırlarını kolaylaştırır. Doğru oyun ve doğru oyun alanı, bebeğin doğru uyaranla doğru yorgunlukta uykuya kolayca geçmesine yardımcı olur.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <h4>Davranış Değişikliği</h4>
+          <p>Gerektiğinde davranışsal müdahaleler yapıyor, pozitif disiplin çerçevesinde yönetiyorum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="reveal">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">Her aile farklı, her bebek farklı. Hazır paket yöntemler değil, size özel bir sistem kuruyorum.</p>
+    <p class="quote-author">— Seda Özcan, Uzman Anne Rehberi</p>
+  </div>
+</section>
+
+<!-- PAKETLer -->
+<section class="packages-section">
+  <div class="reveal">
+    <span class="section-label">Hizmetler</span>
+    <h2 class="section-title">Hangi destek<br>size <em>uygun?</em></h2>
+
+    <!-- MİNİ DESTEK -->
+    <div class="mini-group" style="margin-top: 36px;">
+      <span class="group-label">Eğitim gerektirmeyen durumlar için · Mini Destek</span>
+      <div class="mini-cards">
+        <div class="mini-card">
+          <div class="mini-card-left">
+            <h4>Zoom Soru-Cevap</h4>
+            <p>60 dk · Mevcut sorununuzu birebir konuşmak için</p>
+          </div>
+          <div class="mini-card-price">
+            <span class="amount">3.000</span>
+            <span class="kdv">TL + KDV</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-card-left">
+            <h4>Günlük İnceleme + Telefon</h4>
+            <p>30 dk · Günlüğünüz incelenir</p>
+          </div>
+          <div class="mini-card-price">
+            <span class="amount">2.000</span>
+            <span class="kdv">TL + KDV</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-card-left">
+            <h4>Telefonla Mini Destek</h4>
+            <p>30 dk · Yenidoğan veya anlık sorular</p>
+          </div>
+          <div class="mini-card-price">
+            <span class="amount">1.500</span>
+            <span class="kdv">TL + KDV</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"><span>✦ ✦ ✦</span></div>
+
+    <!-- KAPSAMLI PAKETLER -->
+    <div style="margin-top: 28px;">
+      <span class="group-label">Kapsamlı süreç · Danışmanlık Paketleri</span>
+      <p class="body-text" style="font-size:13px; margin-bottom: 24px;">Her paket aynı temelle başlar: ayrıntılı bilgi formu, 4 günlük günlükler ve 45–60 dk Zoom görüşmesi. Fark, sonrasında aldığınız takip desteğinde.</p>
+
+      <!-- TEK SEANS -->
+      <div class="pkg-card pkg-tek reveal">
+        <div class="pkg-header">
+          <span class="pkg-tag">01 · Başlangıç Desteği</span>
+          <div class="pkg-name">Tek Seans<br>Eğitim Paketi</div>
+          <p class="pkg-desc">Bir görüşme ile yol haritasını belirlemek isteyen aileler için.</p>
+          <div class="pkg-price-row">
+            <span class="pkg-price">4.000</span>
+            <div class="pkg-price-detail">
+              TL + KDV<br>
+              <span>4.800 TL dahil</span>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-check">✓</div>Ayrıntılı bilgi formu & 4 günlük günlükler</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-check">✓</div>45–60 dk Zoom görüşmesi</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-check">✓</div>Kişisel uyku planı & yol haritası</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-check">✓</div>Bağımsız uygulama</div>
+          <div class="pkg-note">⚠ Görüşme sonrası düzenli takip desteği içermez.</div>
+        </div>
+      </div>
+
+      <!-- ARALIKI -->
+      <div class="pkg-card pkg-aral reveal">
+        <div class="pkg-header">
+          <span class="pkg-tag">02 · Kontrollü İlerleme</span>
+          <div class="pkg-name">Aralıklı<br>Danışmanlık Paketi</div>
+          <p class="pkg-desc">Süreci kendi başına ancak kontrollü ilerletmek isteyen aileler için.</p>
+          <div class="pkg-price-row">
+            <span class="pkg-price">6.000</span>
+            <div class="pkg-price-detail">
+              TL + KDV<br>
+              <span>7.200 TL dahil</span>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-check">✓</div>Ayrıntılı bilgi formu & günlükler</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-check">✓</div>45–60 dk Zoom görüşmesi</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-plus">+</div>4 aralıklı telefon takip görüşmesi (2 ay)</div>
+          <div class="pkg-note">⚠ Düzenli WhatsApp takibi içermez.</div>
+        </div>
+      </div>
+
+      <!-- STANDART -->
+      <div class="pkg-card pkg-std reveal">
+        <div class="pkg-header">
+          <div class="best-badge">⭐ En çok tercih edilen</div>
+          <span class="pkg-tag">03 · Düzenli Takip</span>
+          <div class="pkg-name">Standart<br>Danışmanlık Paketi</div>
+          <p class="pkg-profile">"Haftada 3 gün olan konuşma günlerim bana yeter — aradaki süreci kendim devam ettirebilir, tutarlı kalabilirim. Sorularım için konuşma günümü bekleyebilirim." diyen aileler için.</p>
+          <div class="pkg-price-row">
+            <span class="pkg-price">10.000</span>
+            <div class="pkg-price-detail">
+              TL + KDV<br>
+              <span>12.000 TL dahil</span>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-check">✓</div>Ayrıntılı bilgi formu & günlükler</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-check">✓</div>45–60 dk Zoom görüşmesi</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-plus">+</div>Haftada 3 gün günlük takip (Pzt–Çar–Cum) — 4 hafta</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-plus">+</div>12 telefon görüşmesi · Her sabah 08:00–11:00</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-plus">+</div>Mezuniyet görüşmesi</div>
+          <div class="pkg-note">⚠ WhatsApp anlık mesaj desteği içermez. Takip günleri arasında süreci kendiniz yönetirsiniz.</div>
+        </div>
+      </div>
+
+      <!-- FULL -->
+      <div class="pkg-card pkg-full reveal">
+        <div class="pkg-header">
+          <div class="recommended-badge">✦ Önerilen · En iyi deneyim</div>
+          <span class="pkg-tag">04 · Yakın Destek</span>
+          <div class="pkg-name">Full<br>Danışmanlık Paketi</div>
+          <p class="pkg-profile">"Bebeğim değişikliğe zor ayak uyduruyor, sakinleşmesi çok güç. Her adımı birlikte atmak bana kendimi daha güvende hissettirecek." diyen aileler için.</p>
+          <div class="pkg-price-row">
+            <span class="pkg-price">14.000</span>
+            <div class="pkg-price-detail">
+              TL + KDV<br>
+              <span>16.800 TL dahil</span>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-check">✓</div>Ayrıntılı bilgi formu & günlükler</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-check">✓</div>45–60 dk Zoom görüşmesi</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-plus">+</div>Her iş günü günlük takip (Pzt–Cuma) — 4 hafta</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-plus">+</div>20 telefon görüşmesi · Her sabah 08:00–11:00</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-plus">+</div>WhatsApp desteği · 12:00–19:00</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-plus">+</div>Mezuniyet görüşmesi</div>
+          <div class="pkg-note">⚠ Cumartesi ve Pazar görüşme yapılmaz.</div>
+        </div>
+      </div>
+
+      <!-- VIP -->
+      <div class="pkg-card pkg-vip reveal">
+        <div class="pkg-header">
+          <div class="vip-kontenjan">◆ Sınırlı kontenjan</div>
+          <span class="pkg-tag">05 · Premium Süreç</span>
+          <div class="pkg-name">VIP<br>Danışmanlık Paketi</div>
+          <p class="pkg-profile">"Süreci tamamen size bırakmak istiyorum — hiçbir şeyle tek başıma uğraşmak istemiyorum."</p>
+          <p class="pkg-desc">09:00–24:00 WhatsApp desteği ve öncelikli değerlendirme. Özel talep üzerine sunulur.</p>
+          <div class="pkg-price-row">
+            <span class="pkg-price">25.000</span>
+            <div class="pkg-price-detail">
+              TL + KDV<br>
+              <span>30.000 TL dahil</span>
+            </div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-check">✓</div>Full paketin tüm içeriği</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-plus">+</div>Öncelikli değerlendirme & inceleme</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-plus">+</div>WhatsApp desteği · 09:00–24:00</div>
+          <div class="pkg-feature"><div class="pkg-feature-icon icon-plus">+</div>Mezuniyet görüşmesi</div>
+          <div class="pkg-note">⚠ Cumartesi ve Pazar görüşme yapılmaz.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- KARŞILAŞTIRMA TABLOSU -->
+    <div class="compare-wrap reveal">
+      <h3 class="compare-title">Paketleri Karşılaştır</h3>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Tek</th>
+            <th>Aralıklı</th>
+            <th>Standart</th>
+            <th class="col-highlight">Full</th>
+            <th>VIP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Zoom görüşmesi</td>
+            <td class="tick">✓</td>
+            <td class="tick">✓</td>
+            <td class="tick">✓</td>
+            <td class="tick col-highlight">✓</td>
+            <td class="tick">✓</td>
+          </tr>
+          <tr>
+            <td>Takip görüşmesi</td>
+            <td class="cross">—</td>
+            <td class="dot-val">4</td>
+            <td class="dot-val">12</td>
+            <td class="dot-val col-highlight">20</td>
+            <td class="dot-val">20</td>
+          </tr>
+          <tr>
+            <td>Günlük takip</td>
+            <td class="cross">—</td>
+            <td class="cross">—</td>
+            <td class="dot-val">Haftada 3</td>
+            <td class="dot-val col-highlight">Her gün</td>
+            <td class="dot-val">Her gün</td>
+          </tr>
+          <tr>
+            <td>WhatsApp</td>
+            <td class="cross">—</td>
+            <td class="cross">—</td>
+            <td class="cross">—</td>
+            <td class="dot-val col-highlight">12–19</td>
+            <td class="dot-val">09–24</td>
+          </tr>
+          <tr>
+            <td>Mezuniyet görüşmesi</td>
+            <td class="cross">—</td>
+            <td class="cross">—</td>
+            <td class="tick">✓</td>
+            <td class="tick col-highlight">✓</td>
+            <td class="tick">✓</td>
+          </tr>
+          <tr>
+            <td>Fiyat (KDV dahil)</td>
+            <td class="dot-val">4.800</td>
+            <td class="dot-val">7.200</td>
+            <td class="dot-val">12.000</td>
+            <td class="dot-val col-highlight">16.800</td>
+            <td class="dot-val">30.000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="reveal" style="margin-top: 20px; background: var(--warm-white); border-radius: 10px; padding: 14px 16px; font-size: 12.5px; color: var(--mid); line-height: 1.65; border-left: 3px solid var(--stone-light);">
+      Tüm danışmanlık paketlerinin kullanım süresi 2 aydır. Görüşme haklarınızı 2 ay içinde kullanmazsanız, kullanılmış sayılır.
+    </div>
+
+    <div class="intl-note reveal">
+      <span class="globe">🌍</span>
+      <span>Yurt dışı danışanlar için Standart ve VIP paket ücretleri farklıdır. Lütfen ayrıca iletişime geçiniz.</span>
+    </div>
+
+    <div class="reveal" style="margin-top: 32px; text-align: center;">
+      <a href="#" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--stone); font-size: 13px; border-bottom: 1px solid var(--stone-light); padding-bottom: 3px;">
+        Ailelerimizin hikayelerini okumak için → <span style="font-size: 11px; color: var(--stone-light);">(yakında)</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SON QUOTE -->
+<section class="quote-section">
+  <div class="reveal">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">Uykusuz geçen her gece bir kader değil, çözülebilecek bir durum.</p>
+    <p class="quote-author">— Seda Özcan · Uzman Anne Rehberi</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="reveal">
+    <h2 class="cta-title">Hangi paketten<br>başlayacağınızı<br><em>birlikte belirleyelim.</em></h2>
+    <p class="cta-sub">Kararsızsanız endişelenmeyin — size en uygun paketi birlikte konuşabiliriz.</p>
+    <a class="cta-btn" href="#">Şimdi İletişime Geçin</a>
+    <div class="cta-footer">
+      <p>uzmanannerehberi.com</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
