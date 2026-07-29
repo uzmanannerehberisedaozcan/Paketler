@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Seda Özcan ile bütüncül uyku ve regülasyon danışmanlığı. Uyku, regülasyon, duyusal ihtiyaçlar, beslenme ritmi ve aile yaklaşımı birlikte değerlendirilir.">
+  <meta name="theme-color" content="#24344d">
+  <title>Bütüncül Uyku ve Regülasyon Danışmanlığı · Seda Özcan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1f3046;
+      --navy-2: #2b4059;
+      --teal: #4d8580;
+      --teal-dark: #376e69;
+      --mint: #e9f2f0;
+      --paper: #f8f5ef;
+      --soft: #f0eee9;
+      --ink: #20252b;
+      --muted: #6a716f;
+      --line: #ddd9d1;
+      --gold: #b58a54;
+      --rose: #d8b9a7;
+      --white: #fff;
+      --shadow: 0 24px 70px rgba(31, 48, 70, .10);
+      --radius: 28px;
+      --radius-sm: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 0 0, rgba(67,126,122,.08), transparent 30rem),
+        var(--paper);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.no-scroll { overflow: hidden; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    a { color: inherit; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: "Newsreader", serif; line-height: 1.08; }
+    .wrap { width: min(100% - 36px, 1080px); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--teal-dark);
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .section { padding: 88px 0; }
+    .section-head { max-width: 680px; margin-bottom: 28px; }
+    .section-head h2 { margin-bottom: 12px; color: var(--navy); font-size: clamp(2rem, 7vw, 3.3rem); }
+    .section-head p { margin: 0; color: var(--muted); }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    /* Hero */
+    .topbar { position: absolute; z-index: 5; inset: 0 0 auto; padding: 23px 0; }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { color: var(--navy); text-decoration: none; font-family: "Newsreader", serif; font-size: 1.18rem; font-weight: 600; }
+    .brand span { display: block; color: var(--teal-dark); font-family: "DM Sans", sans-serif; font-size: .63rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+    .top-link { padding-bottom: 3px; border-bottom: 1px solid rgba(31,48,70,.35); color: var(--navy); text-decoration: none; font-size: .78rem; font-weight: 600; }
+    .hero { position: relative; min-height: 760px; display: grid; align-items: center; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 88% 10%, rgba(216,185,167,.38), transparent 27rem),
+        radial-gradient(circle at 8% 92%, rgba(77,133,128,.14), transparent 29rem),
+        linear-gradient(135deg, #f8f5ef 0%, #f5f1e9 62%, #edf3f1 100%);
+      z-index: -2;
+    }
+    .hero::after {
+      content: ""; position: absolute; right: -9rem; bottom: -12rem; width: 33rem; aspect-ratio: 1;
+      border: 1px solid rgba(67,126,122,.16); border-radius: 50%; box-shadow: 0 0 0 4rem rgba(67,126,122,.035);
+      z-index: -1;
+    }
+    .hero-inner { display: grid; grid-template-columns: minmax(0,1.12fr) minmax(300px,.72fr); gap: 76px; align-items: center; padding: 132px 0 96px; }
+    .hero-main { min-width: 0; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 9px; margin-bottom: 24px;
+      padding: 8px 13px; border: 1px solid rgba(67,126,122,.28); border-radius: 999px;
+      color: var(--teal-dark); background: rgba(255,255,255,.66); font-size: .78rem; font-weight: 600;
+    }
+    .hero-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
+    h1 { margin-bottom: 24px; color: var(--navy); font-size: clamp(3.45rem, 7.4vw, 6.25rem); letter-spacing: -.05em; }
+    h1 em { display: block; color: var(--teal-dark); font-weight: 400; }
+    .hero-copy { max-width: 680px; color: #4f5968; font-size: clamp(1rem, 3.5vw, 1.16rem); }
+    .hero-copy strong { color: var(--navy); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .hero-card { position: relative; padding: 34px 30px 30px; border: 1px solid rgba(255,255,255,.78); border-radius: 38px 38px 38px 10px; background: rgba(255,255,255,.64); box-shadow: 0 32px 80px rgba(31,48,70,.12); backdrop-filter: blur(14px); }
+    .hero-card::before { content: "“"; position: absolute; top: -27px; right: 25px; color: rgba(77,133,128,.18); font-family: "Newsreader", serif; font-size: 8rem; line-height: 1; }
+    .hero-card-label { color: var(--gold); font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .hero-card h2 { margin: 13px 0 20px; color: var(--navy); font-size: 2rem; }
+    .hero-card p { color: #5c6463; font-size: .91rem; }
+    .hero-points { display: grid; gap: 10px; margin-top: 22px; padding-top: 20px; border-top: 1px solid rgba(31,48,70,.1); }
+    .hero-point { display: flex; align-items: center; gap: 10px; color: var(--navy); font-size: .79rem; font-weight: 600; }
+    .hero-point::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 5px rgba(77,133,128,.1); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 13px 19px;
+      border: 1px solid transparent; border-radius: 999px; text-decoration: none; font-weight: 600; cursor: pointer;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: var(--white); background: var(--navy); }
+    .btn-primary:hover { background: var(--navy-2); }
+    .btn-secondary { color: var(--navy); background: rgba(255,255,255,.65); border-color: var(--line); }
+
+    /* Quick support */
+    .quick-section {
+      position: relative; padding: 76px 0 82px; overflow: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 92% 12%, rgba(216,185,167,.23), transparent 22rem),
+        linear-gradient(145deg, #e9f1ee 0%, #f1f3ee 58%, #f7f3eb 100%);
+    }
+    .quick-section::before {
+      content: ""; position: absolute; left: -10rem; bottom: -17rem; width: 31rem; aspect-ratio: 1;
+      border: 1px solid rgba(77,133,128,.13); border-radius: 50%;
+      box-shadow: 0 0 0 4rem rgba(77,133,128,.025);
+    }
+    .quick-section .wrap { position: relative; }
+    .quick-section .eyebrow { color: var(--teal-dark); }
+    .quick-section h2 { color: var(--navy); font-weight: 500; }
+    .quick-section .section-head p { color: var(--muted); }
+    .quick-grid { display: grid; gap: 14px; }
+    .quick-card {
+      position: relative; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center;
+      padding: 28px; border: 1px solid rgba(31,48,70,.10); border-radius: 30px 30px 30px 8px;
+      background: rgba(255,255,255,.72); color: var(--ink);
+      box-shadow: 0 22px 55px rgba(31,48,70,.07); backdrop-filter: blur(10px);
+    }
+    .quick-card:nth-child(2) { border-radius: 30px 30px 8px 30px; }
+    .quick-card h3 { margin-bottom: 9px; color: var(--navy); font-size: 1.7rem; font-weight: 500; letter-spacing: -.015em; }
+    .quick-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .quick-price { text-align: right; white-space: nowrap; }
+    .quick-price strong { display: block; color: var(--teal-dark); font-family: "Newsreader", serif; font-size: 1.65rem; font-weight: 500; }
+    .quick-price small { color: var(--muted); }
+    .quick-toggle {
+      grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; width: 100%;
+      padding: 15px 0 0; border: 0; border-top: 1px solid rgba(31,48,70,.09); color: var(--teal-dark);
+      background: transparent; cursor: pointer; font-size: .83rem; font-weight: 600; letter-spacing: .015em;
+    }
+    .quick-toggle::after { content: "+"; font-size: 1.25rem; transition: transform .2s ease; }
+    .quick-toggle[aria-expanded="true"]::after { transform: rotate(45deg); }
+    .quick-detail { grid-column: 1 / -1; color: #565f5e; }
+    .quick-detail .check-list li { color: #565f5e; }
+    .quick-detail[hidden] { display: none; }
+
+    /* Price switch */
+    .price-box {
+      padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+    .price-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 6px; border-radius: 18px; background: var(--soft); }
+    .price-tab {
+      min-height: 48px; padding: 10px 12px; border: 0; border-radius: 13px; color: var(--muted); background: transparent;
+      cursor: pointer; font-weight: 600; line-height: 1.25;
+    }
+    .price-tab[aria-selected="true"] { color: var(--white); background: var(--teal); box-shadow: 0 8px 20px rgba(67,126,122,.2); }
+    .price-tab:disabled { opacity: .55; cursor: not-allowed; }
+    .price-note { margin: 13px 4px 0; color: var(--muted); font-size: .83rem; }
+    .price-context {
+      display: flex; align-items: flex-start; gap: 11px; margin: 0 0 14px; padding: 14px 16px;
+      border: 1px solid rgba(77,133,128,.19); border-radius: 16px;
+      color: #52605e; background: rgba(233,242,240,.72); font-size: .86rem; line-height: 1.55;
+    }
+    .price-context::before {
+      content: ""; flex: 0 0 auto; width: 8px; height: 8px; margin-top: .42em;
+      border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 5px rgba(77,133,128,.10);
+    }
+    .price-context strong { color: var(--navy); }
+
+    /* Approach statement before prices */
+    .approach-note {
+      position: relative; margin: 0 0 22px; padding: 30px;
+      border: 1px solid rgba(77,133,128,.24); border-radius: 34px 34px 34px 10px;
+      background:
+        radial-gradient(circle at 100% 0, rgba(216,185,167,.22), transparent 18rem),
+        linear-gradient(145deg, rgba(255,255,255,.93), rgba(233,242,240,.76));
+      box-shadow: 0 20px 55px rgba(31,48,70,.08); overflow: hidden;
+    }
+    .approach-note::after {
+      content: "“"; position: absolute; top: -32px; right: 22px;
+      color: rgba(77,133,128,.11); font-family: "Newsreader", serif; font-size: 9rem; line-height: 1;
+      pointer-events: none;
+    }
+    .approach-note-inner { position: relative; z-index: 1; max-width: 860px; }
+    .approach-note h3 {
+      max-width: 720px; margin: 0 0 14px; color: var(--navy);
+      font-size: clamp(1.8rem, 5.4vw, 2.65rem); font-weight: 500;
+    }
+    .approach-lead { max-width: 800px; margin-bottom: 22px; color: #4f5968; font-size: .98rem; }
+    .approach-lead strong { color: var(--navy); }
+    .approach-flow {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 0 20px;
+    }
+    .approach-step {
+      padding: 15px 16px; border: 1px solid rgba(77,133,128,.13); border-radius: 17px;
+      background: rgba(255,255,255,.62); color: #596260; font-size: .82rem; line-height: 1.5;
+    }
+    .approach-step strong {
+      display: block; margin-bottom: 3px; color: var(--teal-dark); font-size: .76rem;
+      letter-spacing: .04em; text-transform: uppercase;
+    }
+    .approach-quote {
+      margin: 0; padding: 16px 18px; border-left: 3px solid var(--teal);
+      border-radius: 0 14px 14px 0; color: var(--navy); background: rgba(255,255,255,.58);
+      font-family: "Newsreader", serif; font-size: 1.18rem; line-height: 1.45;
+    }
+    .approach-fit {
+      margin: 17px 0 0; color: var(--muted); font-size: .84rem;
+    }
+    .approach-fit strong { color: var(--navy); }
+    .approach-section {
+      position: relative; padding: 72px 0;
+      background:
+        radial-gradient(circle at 6% 100%, rgba(77,133,128,.08), transparent 25rem),
+        var(--paper);
+    }
+    .approach-section .approach-note { margin-bottom: 0; }
+
+    /* Accordion */
+    .accordion-stack { display: grid; gap: 12px; }
+    .accordion-item {
+      border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.88);
+      box-shadow: 0 10px 28px rgba(36,52,77,.05); overflow: hidden;
+    }
+    .accordion-item.featured { border-color: rgba(67,126,122,.5); box-shadow: 0 18px 46px rgba(67,126,122,.12); }
+    .accordion-trigger {
+      display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; width: 100%;
+      padding: 22px; border: 0; color: var(--ink); background: transparent; text-align: left; cursor: pointer;
+    }
+    .accordion-trigger:hover { background: rgba(234,243,242,.42); }
+    .accordion-trigger h3 { margin: 0 0 5px; color: var(--navy); font-size: clamp(1.45rem, 5vw, 2rem); }
+    .accordion-sub { display: block; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+    .package-price { text-align: right; white-space: nowrap; }
+    .package-price strong { display: block; color: var(--teal-dark); font-family: "Newsreader", serif; font-size: 1.45rem; }
+    .package-price small { color: var(--muted); font-size: .73rem; }
+    .chevron {
+      grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; margin-top: 4px;
+      color: var(--teal-dark); font-size: .83rem; font-weight: 600;
+    }
+    .chevron::after { content: "+"; font-size: 1.35rem; transition: transform .22s ease; }
+    .accordion-trigger[aria-expanded="true"] .chevron::after { transform: rotate(45deg); }
+    .accordion-panel { padding: 0 22px 24px; border-top: 1px solid var(--line); }
+    .accordion-panel[hidden] { display: none; }
+    .panel-grid { display: grid; gap: 18px; padding-top: 23px; }
+    .panel-block { padding: 18px; border-radius: var(--radius-sm); background: var(--soft); }
+    .panel-block.mint { background: var(--mint); }
+    .panel-block.rules { border: 1px solid rgba(181,138,84,.28); background: #faf4ea; }
+    .panel-block.rules h4 { color: #7e6038; }
+    .panel-block h4 { margin: 0 0 10px; color: var(--navy); font-size: 1rem; }
+    .check-list, .plain-list { margin: 0; padding: 0; list-style: none; }
+    .check-list li, .plain-list li { position: relative; padding-left: 24px; margin: 8px 0; color: #4f5968; }
+    .check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+    .plain-list li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
+    .value-list { display: grid; gap: 8px; margin-top: 12px; }
+    .value-row {
+      display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: start; padding: 10px 0;
+      border-bottom: 1px solid rgba(36,52,77,.1); color: #4f5968; font-size: .88rem;
+    }
+    .value-row:last-child { border: 0; }
+    .value-row strong { color: var(--navy); white-space: nowrap; }
+    .value-total { margin-top: 10px; padding-top: 12px; border-top: 2px solid var(--teal); color: var(--navy); font-weight: 700; }
+    .package-cta { margin-top: 18px; }
+    .tag {
+      display: inline-flex; margin-bottom: 8px; padding: 5px 9px; border-radius: 999px; background: var(--mint);
+      color: var(--teal-dark); font-size: .69rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    }
+
+    /* Info accordions */
+    .info-section { background: var(--soft); }
+    .info-trigger { padding: 18px 20px; }
+    .info-trigger h3 { font-family: "DM Sans", sans-serif; font-size: 1rem; font-weight: 600; }
+    .info-panel { color: #4f5968; }
+    .steps { display: grid; gap: 12px; margin-top: 16px; }
+    .step { display: grid; grid-template-columns: 38px 1fr; gap: 12px; }
+    .step-num {
+      display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%;
+      color: var(--white); background: var(--teal); font-weight: 700; font-size: .82rem;
+    }
+    .step strong { color: var(--navy); }
+
+    /* Compare */
+    .compare-grid { display: grid; gap: 12px; padding-top: 22px; }
+    .compare-card { padding: 20px; border: 1px solid var(--line); border-radius: 20px; background: var(--white); }
+    .compare-card.highlight { border-color: rgba(77,133,128,.45); background: var(--mint); }
+    .compare-card-head { display: flex; align-items: start; justify-content: space-between; gap: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(31,48,70,.1); }
+    .compare-card h4 { margin: 0; color: var(--navy); font-family: "Newsreader", serif; font-size: 1.35rem; }
+    .compare-card-price { color: var(--teal-dark); font-family: "Newsreader", serif; font-size: 1.25rem; font-weight: 600; white-space: nowrap; }
+    .compare-facts { display: grid; gap: 9px; margin-top: 14px; }
+    .compare-fact { display: grid; grid-template-columns: 105px 1fr; gap: 12px; color: #505958; font-size: .82rem; }
+    .compare-fact span:first-child { color: var(--muted); }
+
+    /* FAQ */
+    .faq-item .accordion-trigger { padding: 18px 20px; }
+    .faq-item .accordion-trigger h3 { font-family: "DM Sans", sans-serif; font-size: .98rem; font-weight: 600; line-height: 1.45; }
+    .faq-item .accordion-panel { color: #4f5968; }
+
+    /* CTA/footer */
+    .closing {
+      position: relative; padding: 78px 0; overflow: hidden; color: var(--white); background: var(--teal-dark);
+    }
+    .closing h2 { max-width: 700px; margin-bottom: 18px; color: var(--white); font-size: clamp(2.2rem, 8vw, 4rem); }
+    .closing p { max-width: 630px; color: #d7e7e5; }
+    .closing .btn { margin-top: 14px; color: var(--navy); background: var(--white); }
+    footer { padding: 28px 0; color: var(--muted); background: var(--paper); font-size: .83rem; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+    :focus-visible { outline: 3px solid rgba(166,120,61,.65); outline-offset: 3px; }
+    @media (min-width: 700px) {
+      .quick-grid { grid-template-columns: 1fr 1fr; }
+      .panel-grid { grid-template-columns: 1fr 1fr; }
+      .compare-grid { grid-template-columns: 1fr 1fr; }
+      .panel-block.full { grid-column: 1 / -1; }
+      .accordion-trigger { padding: 25px 28px; }
+      .accordion-panel { padding: 0 28px 28px; }
+      .chevron { grid-column: auto; justify-content: flex-end; gap: 12px; }
+      .package-price { grid-column: 2; grid-row: 1; }
+      .accordion-trigger > div:first-child { padding-right: 12px; }
+    }
+    @media (max-width: 860px) {
+      .hero { min-height: auto; }
+      .hero-inner { grid-template-columns: 1fr; gap: 42px; padding-top: 130px; }
+      .hero-card { max-width: 560px; }
+    }
+    @media (max-width: 560px) {
+      .topbar { padding-top: 18px; }
+      .top-link { display: none; }
+      .hero-inner { padding: 104px 0 72px; gap: 32px; }
+      h1 { font-size: clamp(3.25rem, 16vw, 4.5rem); }
+      .hero-card { padding: 27px 23px 24px; border-radius: 30px 30px 30px 8px; }
+      .hero-actions .btn { width: 100%; }
+      .quick-card { grid-template-columns: 1fr; }
+      .quick-price { text-align: left; }
+      .approach-note { padding: 25px 21px; border-radius: 28px 28px 28px 8px; }
+      .approach-note::after { top: -24px; right: 12px; font-size: 7rem; }
+      .approach-lead { font-size: .91rem; }
+      .approach-flow { grid-template-columns: 1fr; }
+      .approach-step { padding: 13px 14px; }
+      .approach-quote { font-size: 1.06rem; }
+      .price-tabs { grid-template-columns: 1fr; }
+      .accordion-trigger { grid-template-columns: 1fr; gap: 10px; }
+      .info-trigger,
+      .faq-item .accordion-trigger {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 14px;
+        align-items: center;
+        padding: 20px 22px;
+      }
+      .info-trigger h3,
+      .faq-item .accordion-trigger h3 { margin: 0; line-height: 1.35; }
+      .info-trigger .chevron,
+      .faq-item .accordion-trigger .chevron {
+        grid-column: 2;
+        grid-row: 1;
+        width: 32px;
+        margin: 0;
+        justify-content: center;
+        font-size: 0;
+      }
+      .info-trigger .chevron::after,
+      .faq-item .accordion-trigger .chevron::after {
+        font-size: 1.45rem;
+        line-height: 1;
+      }
+      .package-price { text-align: left; }
+      .value-row { grid-template-columns: 1fr; gap: 3px; }
+      .value-row strong { white-space: normal; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="Ana menü">
+      <div class="wrap topbar-inner">
+        <a class="brand" href="#top">Seda Özcan<span>Uzman Anne Rehberi</span></a>
+        <a class="top-link" href="#paketler">Paketleri incele</a>
+      </div>
+    </nav>
+    <div class="wrap hero-inner">
+      <div class="hero-main" id="top">
+        <div class="hero-badge">Bağlanma odaklı · Regülasyon temelli</div>
+        <p class="eyebrow">Bütüncül uyku ve regülasyon danışmanlığı</p>
+        <h1>Her bebek için <em>uykuya giden yol farklıdır.</em></h1>
+        <p class="hero-copy">Size hazır bir uyku metodu vermiyorum. Bebeğinizin <strong>sinir sistemini, regülasyon becerilerini, duyusal ihtiyaçlarını, beslenme ve günlük ritmini, gelişimsel dönemini ve sizin aile düzeninizi</strong> birlikte değerlendiriyor; uygulanabilir yol haritasını bebeğinize özel oluşturuyorum.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hizli-destek">Hızlı Destekleri Gör</a>
+          <a class="btn btn-secondary" href="#paketler">Danışmanlık Paketleri</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Danışmanlık yaklaşımı özeti">
+        <span class="hero-card-label">Uykuya bütüncül yaklaşım</span>
+        <h2>Uykuya yalnızca uyku üzerinden bakmıyorum.</h2>
+        <p>Bazen önce regülasyonu destekliyor, bazen beslenme ve günlük ritmi düzenliyor, bazen de oyun, duyusal ihtiyaçlar ve aile yaklaşımı üzerinde çalışıyoruz. Süreç, bebeğinizin o anda neye ihtiyaç duyduğuna göre şekilleniyor.</p>
+        <div class="hero-points">
+          <span class="hero-point">Uyku ve günlük ritim</span>
+          <span class="hero-point">Regülasyon ve duyusal ihtiyaçlar</span>
+          <span class="hero-point">Beslenme, oyun ve aile yaklaşımı</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="approach-section" id="yaklasim-ozeti" aria-labelledby="approach-title">
+      <div class="wrap">
+        <aside class="approach-note">
+          <div class="approach-note-inner">
+            <p class="eyebrow">Danışmanlık yaklaşımımız</p>
+            <h3 id="approach-title">Bu, klasik bir uyku eğitimi değildir.</h3>
+            <p class="approach-lead">Bebeğinize herkese uygulanan hazır bir uyku metodu önerilmez ve <strong>bebeğiniz ağlamaya bırakılmaz.</strong> Önce bebeğinizin sinir sistemini, regülasyon becerilerini, duyusal ihtiyaçlarını, beslenme ve oyun düzenini; ardından uykuyla kurduğu ilişkiyi birlikte değerlendiririz.</p>
+            <div class="approach-flow" aria-label="Danışmanlık yaklaşımının üç aşaması">
+              <div class="approach-step"><strong>Önce tanırız</strong>Bebeğinizin neden o desteğe ihtiyaç duyduğunu anlamaya çalışırız.</div>
+              <div class="approach-step"><strong>Regülasyonu destekleriz</strong>Bedeninin ve sinir sisteminin uykuya hazırlanabilme becerisini güçlendiririz.</div>
+              <div class="approach-step"><strong>Yumuşakça düzenleriz</strong>Uyku desteklerini bebeğinizin verdiği sinyallere göre aşamalı biçimde azaltırız.</div>
+            </div>
+            <p class="approach-quote">Hedefimiz bebeği bir metoda uydurmak değil; yöntemi bebeğe ve ailesine uyarlamaktır.</p>
+            <p class="approach-fit"><strong>Sürecin dört hafta olmasının nedeni;</strong> uyku saatlerinin yanında regülasyonu, günlük ritmi, beslenmeyi, oyunu ve aile yaklaşımını birlikte düzenleyebilmek; bebeğinizin verdiği yanıta göre planı güvenle şekillendirebilmektir. Kısa sürede uygulanacak standart veya ağlamaya dayalı bir yöntem arıyorsanız çalışma yaklaşımımız sizin için uygun olmayabilir.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="quick-section" id="hizli-destek">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Önce kısa destekler</p>
+          <h2>Tek bir sorunuz mu var?</h2>
+          <p>Dört haftalık takip gerektirmeyen, sınırlı bir konu için hızlıca uygun desteği seçebilirsiniz.</p>
+        </div>
+        <div class="quick-grid">
+          <article class="quick-card">
+            <div>
+              <h3>Mini Telefon Destek Paketi</h3>
+              <p>30 dakika · Yenidoğan, mezuniyet sonrası veya tek bir konu</p>
+            </div>
+            <div class="quick-price"><strong>2.500 TL</strong><small>+ KDV · 3.000 TL dâhil</small></div>
+            <button class="quick-toggle" type="button" aria-expanded="false" aria-controls="quick-phone">İçeriği gör</button>
+            <div class="quick-detail" id="quick-phone" hidden>
+              <ul class="check-list">
+                <li>30 dakikalık telefon görüşmesi</li>
+                <li>Tek bir ana konuya odaklanma</li>
+                <li>Günlük ve ayrıntılı form incelemesi içermez</li>
+                <li>Yazılı plan, WhatsApp ve görüşme sonrası takip içermez</li>
+              </ul>
+            </div>
+          </article>
+          <article class="quick-card">
+            <div>
+              <h3>Günlük İnceleme + Telefon</h3>
+              <p>En fazla 3 günlük kayıt önce incelenir · Ardından 30 dakika telefon görüşmesi yapılır</p>
+            </div>
+            <div class="quick-price"><strong>3.000 TL</strong><small>+ KDV · 3.600 TL dâhil</small></div>
+            <button class="quick-toggle" type="button" aria-expanded="false" aria-controls="quick-diary">İçeriği gör</button>
+            <div class="quick-detail" id="quick-diary" hidden>
+              <ul class="check-list">
+                <li>En fazla üç günlük uyku kaydının görüşmeden önce uzman tarafından incelenmesi</li>
+                <li>İncelemenin ardından 30 dakikalık telefon görüşmesi</li>
+                <li>Mevcut sorunun ve uygulanabilecek düzenlemelerin değerlendirilmesi</li>
+                <li>Kapsamlı yazılı plan ve görüşme sonrası takip içermez</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="paketler">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Dört haftalık danışmanlıklar</p>
+          <h2>İhtiyacınız kadar destek.</h2>
+          <p>Yalnızca merak ettiğiniz paketi açın. Her pakette kapsam, iletişim sınırları ve ödediğiniz bedelin karşılığı açıkça gösterilir.</p>
+        </div>
+
+        <p class="price-context"><span>Bu paketlerin hiçbirinde bebeğinize hazır bir uyku eğitimi yöntemi uygulanmaz. Bebeğinizin <strong>uykusu ve regülasyon ihtiyacı birlikte değerlendirilir;</strong> paketler arasındaki fark, süreç boyunca ne sıklıkta görüşeceğimiz ve sizi ne kadar yakından takip edeceğimizdir.</span></p>
+
+        <div class="price-box" aria-label="Fiyat dönemi seçimi">
+          <div class="price-tabs" role="tablist" aria-label="Fiyat dönemi">
+            <button class="price-tab" id="transition-tab" role="tab" aria-selected="true" type="button" data-period="transition">30 Eylül 2026’ya kadar<br>Geçiş fiyatları</button>
+            <button class="price-tab" id="current-tab" role="tab" aria-selected="false" type="button" data-period="current">1 Ekim 2026’dan itibaren<br>Güncel fiyatlar</button>
+          </div>
+          <p class="price-note" id="price-note">Geçiş fiyatlarından yararlanabilmek için kayıt ve ödemenin 30 Eylül 2026’ya kadar tamamlanması gerekir.</p>
+        </div>
+
+        <div class="accordion-stack" id="package-accordions">
+          <article class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="panel-assessment">
+              <div>
+                <span class="tag">Bağımsız uygulama</span>
+                <h3>Kapsamlı Değerlendirme</h3>
+                <span class="accordion-sub">Durumu bütüncül anlamak ve kişisel yol haritasını bağımsız uygulamak isteyen aileler için</span>
+              </div>
+              <div class="package-price"><strong data-price="assessment">6.500 TL</strong><small data-vat="assessment">+ KDV · 7.800 TL dâhil</small></div>
+              <span class="chevron">İçeriği gör</span>
+            </button>
+            <div class="accordion-panel" id="panel-assessment" hidden>
+              <div class="panel-grid">
+                <div class="panel-block mint">
+                  <h4>Neler dâhil?</h4>
+                  <ul class="check-list">
+                    <li>Ayrıntılı bilgi formu ve dört günlük kayıt incelemesi</li>
+                    <li>Uyku, regülasyon, duyusal profil, beslenme ritmi ve aile dinamiğinin değerlendirilmesi</li>
+                    <li>Kişiye özel uyku planı ve öncelik sırası</li>
+                    <li>60–75 dakikalık görüntülü Zoom görüşmesi</li>
+                    <li>Dört hafta içinde iki adet 15–20 dakikalık açıklayıcı telefon görüşmesi</li>
+                  </ul>
+                </div>
+                <div class="panel-block">
+                  <h4>Neler dâhil değil?</h4>
+                  <ul class="plain-list">
+                    <li>Düzenli günlük incelemesi</li>
+                    <li>Aktif regülasyon takibi ve günlük plan güncellemesi</li>
+                    <li>WhatsApp desteği</li>
+                    <li>Yeni bir sorun için yeniden kapsamlı değerlendirme</li>
+                  </ul>
+                </div>
+                <div class="panel-block full">
+                  <h4>Paket bedeli neyi karşılıyor?</h4>
+                  <div class="value-list">
+                    <div class="value-row"><span>Bilgi formu ve dört günlük kaydın incelenmesi, kişiye özel yol haritasının hazırlanması</span><strong>2.500 TL</strong></div>
+                    <div class="value-row"><span>60–75 dakikalık görüntülü Zoom görüşmesi ve görüşme kaydının aileye iletilmesi</span><strong>3.000 TL</strong></div>
+                    <div class="value-row"><span>İki kısa açıklayıcı telefon görüşmesi</span><strong>1.000 TL</strong></div>
+                  </div>
+                  <div class="value-total">Toplam: 6.500 TL + KDV</div>
+                </div>
+                <div class="panel-block full rules">
+                  <h4>Önemli kullanım koşulları</h4>
+                  <ul class="plain-list">
+                    <li>Paket kapsamındaki iki kısa telefon görüşmesi, görüntülü Zoom görüşmesinden sonraki dört hafta içinde kullanılmalıdır.</li>
+                    <li>Kullanılmayan görüşmeler başka bir döneme devredilmez.</li>
+                    <li>Sağlık durumu dışında paket süresi dondurulmaz veya uzatılmaz.</li>
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-primary package-cta" href="https://wa.me/905304105057?text=Merhaba%20Seda%20Han%C4%B1m%2C%20Kapsaml%C4%B1%20De%C4%9Ferlendirme%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp’tan Başvur</a>
+            </div>
+          </article>
+
+          <article class="accordion-item featured">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="panel-standard">
+              <div>
+                <span class="tag">En çok tercih edilen</span>
+                <h3>Standart Paket</h3>
+                <span class="accordion-sub">Haftada 3 gün günlük inceleme ve telefon takibi · WhatsApp yok</span>
+              </div>
+              <div class="package-price"><strong data-price="standard">15.000 TL</strong><small data-vat="standard">+ KDV · 18.000 TL dâhil</small></div>
+              <span class="chevron">İçeriği gör</span>
+            </button>
+            <div class="accordion-panel" id="panel-standard" hidden>
+              <div class="panel-grid">
+                <div class="panel-block mint">
+                  <h4>Neler dâhil?</h4>
+                  <ul class="check-list">
+                    <li>Kapsamlı başlangıç değerlendirmesi ve kişisel plan</li>
+                    <li>Aktif regülasyon, duyu, beden, oyun ve beslenme düzenlemesi</li>
+                    <li>Dört hafta, Pazartesi–Çarşamba–Cuma olmak üzere toplam 12 takip günü</li>
+                    <li>Aile, takip gününde günlüğünü kendisine iletilen sistem üzerinden 09.00–11.00 arasında gönderir</li>
+                    <li>Günlük uzman tarafından incelendikten sonra aile telefonla aranır</li>
+                    <li>Toplam 12 adet, ortalama 15–20 dakikalık telefon görüşmesi</li>
+                    <li>Plan güncellemeleri ve mezuniyet görüşmesi</li>
+                  </ul>
+                </div>
+                <div class="panel-block">
+                  <h4>İletişim sınırları</h4>
+                  <ul class="plain-list">
+                    <li>WhatsApp ve anlık mesaj desteği yoktur</li>
+                    <li>Takip günü dışında günlük değerlendirmesi yapılmaz</li>
+                    <li>Hafta sonu görüşmesi yapılmaz</li>
+                    <li>Sorular takip gününe kadar not edilir</li>
+                  </ul>
+                </div>
+                <div class="panel-block full">
+                  <h4>Bu ücret neyi karşılıyor?</h4>
+                  <div class="value-list" data-breakdown="standard"></div>
+                  <div class="value-total" data-total="standard">Toplam: 15.000 TL + KDV</div>
+                </div>
+                <div class="panel-block full rules">
+                  <h4>Önemli çalışma kuralları</h4>
+                  <ul class="plain-list">
+                    <li>Günlük, takip gününde sistem üzerinden mutlaka 09.00–11.00 arasında iletilmelidir.</li>
+                    <li>09.00–11.00 arasında iletilmeyen günlük için o günkü takip hakkı kullanılmış sayılır; başka bir güne devredilmez.</li>
+                    <li>Danışmanlık süresi dört haftadır ve başlangıçta belirlenen tarihler arasında kesintisiz yürütülür.</li>
+                    <li>Sağlık durumu dışında paket dondurulmaz veya süresi uzatılmaz.</li>
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-primary package-cta" href="https://wa.me/905304105057?text=Merhaba%20Seda%20Han%C4%B1m%2C%20Standart%20Paket%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp’tan Başvur</a>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="panel-full">
+              <div>
+                <span class="tag">Yakın destek</span>
+                <h3>Full Yakın Takip Paketi</h3>
+                <span class="accordion-sub">Her iş günü günlük inceleme ve telefon · 12.00–17.00 kısa WhatsApp desteği</span>
+              </div>
+              <div class="package-price"><strong data-price="full">20.000 TL</strong><small data-vat="full">+ KDV · 24.000 TL dâhil</small></div>
+              <span class="chevron">İçeriği gör</span>
+            </button>
+            <div class="accordion-panel" id="panel-full" hidden>
+              <div class="panel-grid">
+                <div class="panel-block mint">
+                  <h4>Neler dâhil?</h4>
+                  <ul class="check-list">
+                    <li>Kapsamlı değerlendirme ve kişiye özel plan</li>
+                    <li>Aktif uyku, regülasyon, duyu, beden, oyun ve beslenme çalışması</li>
+                    <li>Dört hafta, Pazartesi–Cuma olmak üzere toplam 20 takip günü</li>
+                    <li>Aile, her takip gününde günlüğünü kendisine iletilen sistem üzerinden 09.00–11.00 arasında gönderir</li>
+                    <li>Günlük uzman tarafından incelendikten sonra aile telefonla aranır</li>
+                    <li>Toplam 20 adet, ortalama 15–20 dakikalık telefon görüşmesi</li>
+                    <li>12.00–17.00 kısa WhatsApp soru desteği</li>
+                    <li>Daha sık plan güncellemesi ve mezuniyet görüşmesi</li>
+                  </ul>
+                </div>
+                <div class="panel-block">
+                  <h4>WhatsApp desteğinin sınırı</h4>
+                  <p>Canlı ve kesintisiz mesajlaşma değildir. Sabah görüşmesinden sonra oluşan kısa sorular uygun olan ilk değerlendirme aralığında yanıtlanır. Yeni günlük analizi ve kapsamlı plan değişiklikleri takip görüşmesinde ele alınır.</p>
+                  <ul class="plain-list">
+                    <li>Hafta sonu destek yoktur</li>
+                    <li>17.00 sonrasında yanıt verilmez</li>
+                    <li>Tıbbi acil durum danışmanlığı değildir</li>
+                  </ul>
+                </div>
+                <div class="panel-block full">
+                  <h4>Bu ücret neyi karşılıyor?</h4>
+                  <div class="value-list" data-breakdown="full"></div>
+                  <div class="value-total" data-total="full">Toplam: 20.000 TL + KDV</div>
+                </div>
+                <div class="panel-block full rules">
+                  <h4>Önemli çalışma kuralları</h4>
+                  <ul class="plain-list">
+                    <li>Günlük, takip gününde sistem üzerinden mutlaka 09.00–11.00 arasında iletilmelidir.</li>
+                    <li>09.00–11.00 arasında iletilmeyen günlük için o günkü takip hakkı kullanılmış sayılır; başka bir güne devredilmez.</li>
+                    <li>Danışmanlık süresi dört haftadır ve başlangıçta belirlenen tarihler arasında kesintisiz yürütülür.</li>
+                    <li>Sağlık durumu dışında paket dondurulmaz veya süresi uzatılmaz.</li>
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-primary package-cta" href="https://wa.me/905304105057?text=Merhaba%20Seda%20Han%C4%B1m%2C%20Full%20Yak%C4%B1n%20Takip%20Paketi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp’tan Başvur</a>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="panel-vip">
+              <div>
+                <span class="tag">Çok sınırlı kontenjan</span>
+                <h3>VIP Paket</h3>
+                <span class="accordion-sub">Öncelikli değerlendirme · Her iş günü takip · 12.00–21.00 genişletilmiş WhatsApp</span>
+              </div>
+              <div class="package-price"><strong data-price="vip">29.000 TL</strong><small data-vat="vip">+ KDV · 34.800 TL dâhil</small></div>
+              <span class="chevron">İçeriği gör</span>
+            </button>
+            <div class="accordion-panel" id="panel-vip" hidden>
+              <div class="panel-grid">
+                <div class="panel-block mint">
+                  <h4>Neler dâhil?</h4>
+                  <ul class="check-list">
+                    <li>Full Yakın Takip Paketinin tüm uzmanlık kapsamı</li>
+                    <li>Dört hafta boyunca her iş günü, toplam 20 öncelikli takip günü</li>
+                    <li>Aile, her takip gününde günlüğünü kendisine iletilen sistem üzerinden gün içinde istediği saatte gönderir</li>
+                    <li>Günlük öncelikli olarak incelendikten sonra aile telefonla aranır</li>
+                    <li>Toplam 20 adet, ortalama 15–20 dakikalık telefon görüşmesi</li>
+                    <li>12.00–21.00 genişletilmiş WhatsApp desteği</li>
+                    <li>Uyku ve regülasyon planında öncelikli güncelleme</li>
+                    <li>Gerektiğinde aynı iş günü ek kısa telefon yönlendirmesi</li>
+                    <li>Mezuniyet görüşmesi ve çok sınırlı kontenjan</li>
+                  </ul>
+                </div>
+                <div class="panel-block">
+                  <h4>Genişletilmiş desteğin sınırı</h4>
+                  <p>Öncelikli ve geniş erişim sunar; kesintisiz canlı sohbet veya anında yanıt garantisi değildir. Mesajlar çalışma düzeni içinde öncelikli değerlendirilir.</p>
+                  <ul class="plain-list">
+                    <li>Hafta sonu rutin takip yoktur</li>
+                    <li>21.00 sonrasında mesaj desteği yoktur</li>
+                    <li>Tıbbi acil durum değerlendirmesi değildir</li>
+                  </ul>
+                </div>
+                <div class="panel-block full">
+                  <h4>Bu ücret neyi karşılıyor?</h4>
+                  <div class="value-list" data-breakdown="vip"></div>
+                  <div class="value-total" data-total="vip">Toplam: 29.000 TL + KDV</div>
+                </div>
+                <div class="panel-block full rules">
+                  <h4>Önemli çalışma kuralları</h4>
+                  <ul class="plain-list">
+                    <li>VIP Pakette günlük gönderimi için 09.00–11.00 saat sınırı yoktur; aile günlüğünü takip günü içinde uygun olduğu saatte iletebilir.</li>
+                    <li>İletilen günlük çalışma saatleri içinde öncelikli olarak değerlendirilir.</li>
+                    <li>Danışmanlık süresi dört haftadır ve başlangıçta belirlenen tarihler arasında kesintisiz yürütülür.</li>
+                    <li>Sağlık durumu dışında paket dondurulmaz veya süresi uzatılmaz.</li>
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-primary package-cta" href="https://wa.me/905304105057?text=Merhaba%20Seda%20Han%C4%B1m%2C%20VIP%20Paket%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp’tan Başvur</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="accordion-stack" style="margin-top:18px">
+          <article class="accordion-item">
+            <button class="accordion-trigger info-trigger" type="button" aria-expanded="false" aria-controls="compare-panel">
+              <div><h3>Paketleri Karşılaştır</h3><span class="accordion-sub">Takip, telefon, WhatsApp ve fiyatları tek yerde görün</span></div>
+              <span class="chevron">Tabloyu aç</span>
+            </button>
+            <div class="accordion-panel" id="compare-panel" hidden>
+              <div class="compare-grid">
+                <article class="compare-card">
+                  <div class="compare-card-head"><h4>Kapsamlı Değerlendirme</h4><strong class="compare-card-price" data-table-price="assessment">6.500 TL</strong></div>
+                  <div class="compare-facts">
+                    <div class="compare-fact"><span>Takip</span><strong>Düzenli takip yok</strong></div>
+                    <div class="compare-fact"><span>Telefon</span><strong>2 kısa açıklama görüşmesi</strong></div>
+                    <div class="compare-fact"><span>WhatsApp</span><strong>Yok</strong></div>
+                    <div class="compare-fact"><span>Kimin için?</span><strong>“Yol haritasını bilirsem kendim uygulayabilirim.” diyen aileler için</strong></div>
+                  </div>
+                </article>
+                <article class="compare-card highlight">
+                  <div class="compare-card-head"><h4>Standart Paket</h4><strong class="compare-card-price" data-table-price="standard">15.000 TL</strong></div>
+                  <div class="compare-facts">
+                    <div class="compare-fact"><span>Takip</span><strong>Haftada 3 gün</strong></div>
+                    <div class="compare-fact"><span>Telefon</span><strong>12 görüşme</strong></div>
+                    <div class="compare-fact"><span>WhatsApp</span><strong>Yok</strong></div>
+                    <div class="compare-fact"><span>Kimin için?</span><strong>“Görüşme günleri arasında sorum olsa da bekleyebilir, planı sürdürebilirim.” diyen aileler için</strong></div>
+                  </div>
+                </article>
+                <article class="compare-card">
+                  <div class="compare-card-head"><h4>Full Yakın Takip</h4><strong class="compare-card-price" data-table-price="full">20.000 TL</strong></div>
+                  <div class="compare-facts">
+                    <div class="compare-fact"><span>Takip</span><strong>Her iş günü</strong></div>
+                    <div class="compare-fact"><span>Telefon</span><strong>20 görüşme</strong></div>
+                    <div class="compare-fact"><span>WhatsApp</span><strong>12.00–17.00 kısa soru desteği</strong></div>
+                    <div class="compare-fact"><span>Kimin için?</span><strong>“Her iş günü değerlendirilmek ve kısa sorularım için gün içinde destek almak istiyorum.” diyen aileler için</strong></div>
+                  </div>
+                </article>
+                <article class="compare-card">
+                  <div class="compare-card-head"><h4>VIP Paket</h4><strong class="compare-card-price" data-table-price="vip">29.000 TL</strong></div>
+                  <div class="compare-facts">
+                    <div class="compare-fact"><span>Takip</span><strong>Her iş günü, öncelikli</strong></div>
+                    <div class="compare-fact"><span>Günlük iletimi</span><strong>Saat sınırı yok</strong></div>
+                    <div class="compare-fact"><span>WhatsApp</span><strong>12.00–21.00 genişletilmiş destek</strong></div>
+                    <div class="compare-fact"><span>Kimin için?</span><strong>“Öncelikli değerlendirme, saat sınırı olmadan günlük iletimi ve daha geniş erişim istiyorum.” diyen aileler için</strong></div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section info-section" id="yaklasim">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Yaklaşım ve süreç</p>
+          <h2>Neden yalnızca uyku planı değil?</h2>
+          <p>Detayları merak ettiğiniz başlığa dokunarak okuyabilirsiniz.</p>
+        </div>
+        <div class="accordion-stack">
+          <article class="accordion-item">
+            <button class="accordion-trigger info-trigger" type="button" aria-expanded="false" aria-controls="info-whole">
+              <div><h3>Neden klasik bir uyku eğitimi değil?</h3></div><span class="chevron">Aç</span>
+            </button>
+            <div class="accordion-panel info-panel" id="info-whole" hidden>
+              <p>Bir bebeğin uykuya geçememesi, gece sık uyanması veya sürekli bakım veren desteği araması yalnızca “yanlış alışkanlık” değildir. Bebeğin bedeni sakinleşmeye hazır değilse, duyusal ihtiyaçları karşılanmıyorsa, beslenme ritmi uygun değilse veya aile içindeki uygulamalar örtüşmüyorsa tek başına verilen uyku planı kalıcı olmayabilir.</p>
+              <p>Bu nedenle yalnızca “Nasıl uyutacağız?” sorusuna değil, “Bu bebek neden uykuya geçmekte zorlanıyor ve uyuyabilmek için neye ihtiyaç duyuyor?” sorusuna cevap arıyorum.</p>
+            </div>
+          </article>
+          <article class="accordion-item">
+            <button class="accordion-trigger info-trigger" type="button" aria-expanded="false" aria-controls="info-regulation">
+              <div><h3>Regülasyon çalışması neden sürecin içinde?</h3></div><span class="chevron">Aç</span>
+            </button>
+            <div class="accordion-panel info-panel" id="info-regulation" hidden>
+              <p>Regülasyon; bebeğin bedensel ve duygusal olarak sakinleşebilmesi, uyaranları işleyebilmesi, geçişleri yönetebilmesi ve bakım verenin desteğiyle yeniden dengelenebilmesidir. Bu ihtiyaç yalnızca çok hareketli bebeklerde görülmez.</p>
+              <p>Bazı bebeklerde ilk 7–10 gün regülasyon, beslenme ritmi, oyun-hareket düzeni ve sakinleşme becerileri öncelik kazanabilir. Uyku günlükleri bu sırada izlenmeye devam eder. Takipli paketlerde bu çalışma ücrete dâhildir; sonradan ayrıca regülasyon ücreti çıkarılmaz.</p>
+            </div>
+          </article>
+          <article class="accordion-item">
+            <button class="accordion-trigger info-trigger" type="button" aria-expanded="false" aria-controls="info-scope">
+              <div><h3>Hangi alanlar birlikte değerlendiriliyor?</h3></div><span class="chevron">Aç</span>
+            </button>
+            <div class="accordion-panel info-panel" id="info-scope" hidden>
+              <ul class="check-list">
+                <li>Kişiye özel uyku planı ve günlük ritim</li>
+                <li>Sinir sistemi regülasyonu ve ortak regülasyon</li>
+                <li>Duyusal ihtiyaçlar, beden farkındalığı, hareket ve oyun</li>
+                <li>Uyku ile ilişkili beslenme saatleri ve gece beslenmeleri</li>
+                <li>Uyku ortamı, ışık, ses, ısı ve uyku hijyeni</li>
+                <li>Uykuya geçiş ve gece uyanmalarındaki yaklaşım</li>
+                <li>Aile dinamiği, ebeveyn tutumu ve gelişimsel sınırlar</li>
+              </ul>
+            </div>
+          </article>
+          <article class="accordion-item">
+            <button class="accordion-trigger info-trigger" type="button" aria-expanded="false" aria-controls="info-process">
+              <div><h3>Danışmanlık süreci nasıl ilerliyor?</h3></div><span class="chevron">Aç</span>
+            </button>
+            <div class="accordion-panel info-panel" id="info-process" hidden>
+              <div class="steps">
+                <div class="step"><span class="step-num">1</span><p><strong>Randevu ve ödeme:</strong> Uygun paket seçilir ve görüntülü Zoom görüşmesinin tarihi belirlenir. İleri tarihli randevularda 2.000 TL rezervasyon ödemesi, diğer durumlarda paket ödemesi alınır.</p></div>
+                <div class="step"><span class="step-num">2</span><p><strong>Uyku portalına giriş:</strong> Aileye kişisel uyku portalı iletilir. Ayrıntılı bilgi formu; uyku, beslenme, gelişim, sağlık, duyusal özellikler ve aile düzenini kapsayacak şekilde doldurulur.</p></div>
+                <div class="step"><span class="step-num">3</span><p><strong>Ayrıntılı günlükler:</strong> Aile, istenen günlere ait uyku, uyanıklık, beslenme ve önemli davranış kayıtlarını portal üzerinden tamamlar.</p></div>
+                <div class="step"><span class="step-num">4</span><p><strong>Uzman incelemesi ve aksiyon planı:</strong> Bilgi formu ve günlükler Seda Özcan tarafından ayrıntılı olarak incelenir; bebeğe ve aileye özel aksiyon planı görüşmeden önce hazırlanır.</p></div>
+                <div class="step"><span class="step-num">5</span><p><strong>60–75 dakikalık görüntülü Zoom görüşmesi:</strong> Değerlendirme, aksiyon planı, öncelikler ve uygulama sırası aileye ayrıntılı biçimde anlatılır.</p></div>
+                <div class="step"><span class="step-num">6</span><p><strong>Görüşme kaydı:</strong> Zoom görüşmesinin kaydı, daha sonra yeniden izleyip inceleyebilmesi için aileye iletilir.</p></div>
+                <div class="step"><span class="step-num">7</span><p><strong>Seçilen pakete göre takip:</strong> Zoom görüşmesinden sonra iletişim; Kapsamlı Değerlendirme, Standart, Full veya VIP paketin takip sıklığına ve kapsamına göre yürütülür.</p></div>
+                <div class="step"><span class="step-num">8</span><p><strong>Mezuniyet:</strong> Takipli paketlerin sonunda ailenin sistemi bağımsız sürdürebilmesi için kapanış değerlendirmesi yapılır.</p></div>
+              </div>
+            </div>
+          </article>
+          <article class="accordion-item">
+            <button class="accordion-trigger info-trigger" type="button" aria-expanded="false" aria-controls="info-terms">
+              <div><h3>Çalışma düzeni ve önemli sınırlar</h3></div><span class="chevron">Aç</span>
+            </button>
+            <div class="accordion-panel info-panel" id="info-terms" hidden>
+              <ul class="plain-list">
+                <li>Takipli paketler dört haftadır ve belirlenen tarihler arasında kesintisiz yürütülür.</li>
+                <li>Standart ve Full paketlerde aile, takip günündeki günlüğü kendisine iletilen sistem üzerinden 09.00–11.00 arasında gönderir.</li>
+                <li>VIP Pakette günlük gönderimi için saat sınırı bulunmaz; günlük takip günü içinde iletilebilir.</li>
+                <li>Günlük uzman tarafından incelenir; inceleme tamamlandıktan sonra aile telefonla aranır.</li>
+                <li>Takip telefonları, incelenen günlüğün değerlendirilmesi ve sonraki adımın aktarılması amacıyla ortalama 15–20 dakika sürer.</li>
+                <li>Standart ve Full paketlerde 09.00–11.00 arasında iletilmeyen günlük için o günkü takip hakkı kullanılmış sayılır ve başka güne devredilmez. Bu kural VIP Paket için geçerli değildir.</li>
+                <li>Sağlık durumu dışında paket dondurulmaz veya süresi uzatılmaz.</li>
+                <li>WhatsApp anlık yanıt veya kesintisiz canlı sohbet garantisi değildir.</li>
+                <li>Cumartesi ve Pazar rutin değerlendirme, telefon ve mesaj desteği verilmez.</li>
+                <li>Danışmanlık tıbbi tanı ve tedavi yerine geçmez.</li>
+                <li>Dört hafta profesyonel takip süresidir; sonuç garantisi değildir.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="accordion-item" id="iptal-iade">
+            <button class="accordion-trigger info-trigger" type="button" aria-expanded="false" aria-controls="info-refund">
+              <div><h3>Rezervasyon, iptal ve iade koşulları</h3></div><span class="chevron">Aç</span>
+            </button>
+            <div class="accordion-panel info-panel" id="info-refund" hidden>
+              <div class="panel-grid">
+                <div class="panel-block rules">
+                  <h4>2.000 TL rezervasyon ödemesi</h4>
+                  <ul class="plain-list">
+                    <li>İleri tarihli randevularda, görüşme saatinin aile adına ayrılması için 2.000 TL rezervasyon ödemesi alınır.</li>
+                    <li>Danışmanlık başladığında bu tutar toplam paket bedelinden düşülür; paket ücretine ek bir ödeme değildir.</li>
+                    <li>Randevu iptali hâlindeki iade talepleri; yürürlükteki tüketici mevzuatı, hizmete başlanıp başlanmadığı ve aşağıdaki randevu iptal koşulları birlikte değerlendirilerek sonuçlandırılır.</li>
+                  </ul>
+                </div>
+                <div class="panel-block">
+                  <h4>Randevu iptali ve katılmama</h4>
+                  <ul class="plain-list">
+                    <li>İptal veya değişiklik talebi, görüntülü Zoom randevusundan en az 12 saat önce yazılı olarak bildirilmelidir.</li>
+                    <li>Randevuya 12 saatten az kala yapılan iptallerde veya görüşmeye katılmama durumunda Zoom görüşmesi yapılmış sayılır.</li>
+                    <li>Yeni bir Zoom randevusu oluşturulması istenirse 3.500 TL + KDV (KDV dâhil 4.200 TL) görüşme bedeli yeniden alınır.</li>
+                  </ul>
+                </div>
+                <div class="panel-block full">
+                  <h4>Zoom görüşmesinden sonra takipli paketten ayrılma</h4>
+                  <ul class="plain-list">
+                    <li>Ayrılma talebi, Zoom görüşmesinden sonraki üç gün içinde yazılı olarak iletilmelidir.</li>
+                    <li>Tamamlanmış Kapsamlı Değerlendirme hizmeti; bilgi formu ve günlüklerin uzman tarafından incelenmesini, kişiye özel aksiyon planını ve 60–75 dakikalık görüntülü Zoom görüşmesini kapsar.</li>
+                    <li>Bu hizmetin KDV dâhil 7.800 TL bedeli toplam ödemeden düşülür.</li>
+                    <li>Kalan tutarın yüzde 50’si aileye iade edilir. Kalan yüzde 50; ayrılan kontenjan, yapılan hazırlık ve süreç planlamasının karşılığı olarak iade edilmez.</li>
+                    <li>Zoom görüşmesinden sonraki üç günlük süre geçtikten sonra takipli paketlerde iade yapılmaz.</li>
+                  </ul>
+                </div>
+                <div class="panel-block full mint">
+                  <h4>Önemli yasal bilgilendirme</h4>
+                  <p>Yürürlükteki tüketici mevzuatından doğan zorunlu haklar saklıdır. Hizmetin cayma süresi dolmadan başlatılmasının talep edildiği durumlarda gerekli ön bilgilendirme ve açık onay ödeme öncesinde yazılı olarak alınır. İptal ve cayma bildirimleri WhatsApp veya e-posta gibi yazılı ve saklanabilir bir kanaldan iletilmelidir.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sss">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Sık sorulan sorular</p>
+          <h2>Aklınızda soru kalmasın.</h2>
+        </div>
+        <div class="accordion-stack" id="faq-list">
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-0"><div><h3>Bana yalnızca bir uyku programı mı verilecek?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-0" hidden><p>Hayır. Uyku saatleri planın yalnızca bir bölümüdür. Bebeğinizin regülasyonu, duyusal ihtiyaçları, beslenme ritmi, oyun ve hareket düzeni, uyku ortamı ve ebeveyn yaklaşımı birlikte değerlendirilir.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-1"><div><h3>Regülasyon çalışması için sonradan ayrıca ücret ödeyecek miyim?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-1" hidden><p>Hayır. Aktif regülasyon çalışması Standart, Full Yakın Takip ve VIP paketlerinin ücretine dâhildir. Süreç başladıktan sonra ayrıca regülasyon ücreti çıkarılmaz.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-2"><div><h3>Benim bebeğimin regülasyon sorunu yok; neden pakette?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-2" hidden><p>Regülasyon ihtiyacı yalnızca çok hareketli bebeklerde görülmez. Uykuya geçerken sürekli temas istemek, geçişlerde zorlanmak veya bakım veren desteği olmadan sakinleşememek de değerlendirilir. Yalnızca ihtiyaç duyulan alanlar çalışılır.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-3"><div><h3>İlk 7–10 gün regülasyon çalışılırsa uyku çalışılmayacak mı?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-3" hidden><p>Uyku günlükleri süreç boyunca takip edilir. Bazı bebeklerde önce sakinleşme, ritim ve duyusal ihtiyaçlara ağırlık verilir; uygun uyku düzenlemeleri bebeğin hazır oluşuna göre eş zamanlı eklenir.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-4"><div><h3>Dört haftanın sonunda bütün uyku sorunları kesin biter mi?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-4" hidden><p>Dört hafta profesyonel takip süresini ifade eder; sonuç garantisi değildir. Gelişimsel özellikler, sağlık ve beslenme durumu, regülasyon ihtiyacı ve uygulama tutarlılığı ilerleme hızını etkiler.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-5"><div><h3>Standart Pakette neden WhatsApp yok?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-5" hidden><p>Standart Paket yazışma yerine telefonla net ve düzenli yönlendirme isteyen aileler için hazırlanmıştır. Aile günlüğünü takip gününde sistem üzerinden iletir; günlük uzman tarafından incelendikten sonra aile telefonla aranır.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-6"><div><h3>Telefon görüşmeleri neden 15–20 dakika?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-6" hidden><p>Görüşmeden önce günlükler zaten incelenmiş ve sonraki adım belirlenmiş olur. Telefon görüşmesi bu değerlendirmenin ve o günün aksiyonunun net aktarımı içindir.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-7"><div><h3>Takip günü dışında bir şey olursa ne yapacağım?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-7" hidden><p>Standart Pakette sorular takip gününe kadar not edilir. Aradaki günlerde mesaj desteği isteyen aileler için Full Yakın Takip veya VIP daha uygundur.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-8"><div><h3>Full Yakın Takip Paketindeki WhatsApp sınırsız mı?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-8" hidden><p>Hayır. WhatsApp canlı ve kesintisiz sohbet değildir. Sabah görüşmesinden sonra ortaya çıkan kısa sorular belirtilen saatlerde uygun değerlendirme aralığında yanıtlanır.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-9"><div><h3>Hangi paketin bana uygun olduğuna nasıl karar vereceğim?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-9" hidden><p>Sorularınızı takip gününe kadar bekletebiliyorsanız Standart; her iş günü yönlendirme ve kısa mesaj desteği istiyorsanız Full; öncelikli ve geniş erişim istiyorsanız VIP Paket uygundur.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-10"><div><h3>Yalnızca bir sorum var; paket almak zorunda mıyım?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-10" hidden><p>Hayır. Günlük incelemesi gerektirmeyen tek konu için Mini Telefon Destek; kayıt incelemesi gereken sınırlı sorun için Günlük İnceleme + Telefon seçilebilir.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-11"><div><h3>Daha önce mezun oldum, yeni bir sorum çıktı. Ne almalıyım?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-11" hidden><p>Tek bir konuysa Mini Telefon Destek; yeni günlükler yorumlanacaksa Günlük İnceleme + Telefon; bütün düzen yeniden kurulacaksa Kapsamlı Değerlendirme uygundur.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-12"><div><h3>Beslenme de paket kapsamında mı?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-12" hidden><p>Uyku ile ilişkili öğün saatleri, gece beslenmeleri ve günlük beslenme ritmi değerlendirilir. Tıbbi beslenme, yutma, büyüme-gelişme veya ileri besin reddi ilgili uzmanın alanıdır.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-13"><div><h3>Bebeği ağlamaya bırakıyor musunuz?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-13" hidden><p>Hayır. Yaklaşım bağlanma ve regülasyon temellidir. Bebeğin sinyalleri, gelişimsel kapasitesi ve ailenin sınırları birlikte değerlendirilir.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-14"><div><h3>Takip gününde günlük ve telefon görüşmesi nasıl ilerliyor?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-14" hidden><p>Size özel günlük sistemi danışmanlık başlangıcında iletilir. Standart ve Full paketlerde takip günündeki günlük bu sistem üzerinden 09.00–11.00 arasında gönderilir; VIP Pakette saat sınırı yoktur. Günlüğünüz Seda Özcan tarafından incelenir, bebeğinizin verdiği yanıt ve sonraki adım belirlenir; ardından telefonla aranırsınız.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-15"><div><h3>Günlüğü 09.00–11.00 arasında gönderemezsem ne olur?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-15" hidden><p>Standart ve Full paketlerde 09.00–11.00 arasında iletilmeyen günlük için o günkü takip hakkı kullanılmış sayılır ve başka bir güne devredilmez. VIP Pakette günlük gönderimi için saat sınırı bulunmadığından bu kural uygulanmaz.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-16"><div><h3>Paketi dondurabilir veya ara verebilir miyim?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-16" hidden><p>Danışmanlık süreci dört haftadır ve başlangıçta belirlenen tarihler arasında kesintisiz yürütülür. Sağlık durumu dışında paket dondurulmaz, ara verilmez veya süresi uzatılmaz.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-17"><div><h3>Rezervasyon ödemesi paket ücretine dâhil mi?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-17" hidden><p>Evet. İleri tarihli Zoom randevusunun sizin adınıza ayrılması için alınan 2.000 TL rezervasyon ödemesi, danışmanlık başladığında toplam paket bedelinden düşülür; paket ücretine ek bir ödeme değildir. İptal ve iade talepleri yürürlükteki tüketici mevzuatı ve açıklanan randevu iptal koşulları kapsamında değerlendirilir.</p></div>
+          </article>
+          <article class="accordion-item faq-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-18"><div><h3>Zoom görüşmesinden sonra paketten ayrılırsam ne olur?</h3></div><span class="chevron">Yanıtı gör</span></button>
+            <div class="accordion-panel" id="faq-18" hidden><p>Talebinizi Zoom görüşmesinden sonraki üç gün içinde yazılı olarak iletirseniz, tamamlanan Kapsamlı Değerlendirmenin KDV dâhil 7.800 TL bedeli toplam ödemenizden düşülür ve kalan tutarın yüzde 50’si iade edilir. Üç günlük süre geçtikten sonra takipli paketlerde iade yapılmaz. Yasal tüketici hakları saklıdır.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <p class="eyebrow" style="color:#b9d8d5">Birlikte çalışalım</p>
+        <h2>Bebeğinizi bir metoda uydurmak yerine, ona ve ailenize uygun bir yol haritası oluşturalım.</h2>
+        <p>İhtiyacınıza uygun paketi seçerek başvurabilirsiniz. Başvurunuz danışmanlık kapsamına ve kontenjan uygunluğuna göre değerlendirilir.</p>
+        <a class="btn" href="https://wa.me/905304105057?text=Merhaba%20Seda%20Han%C4%B1m%2C%20dan%C4%B1%C5%9Fmanl%C4%B1k%20paketleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp’tan Başvuru Yap</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Seda Özcan · Uzman Anne Rehberi</span>
+      <a href="https://uzmanannerehberi.com">uzmanannerehberi.com</a>
+    </div>
+  </footer>
+
+  <script>
+    const priceData = {
+      transition: {
+        assessment: { price: "6.500 TL", vat: "+ KDV · 7.800 TL dâhil" },
+        standard: { price: "15.000 TL", vat: "+ KDV · 18.000 TL dâhil", breakdown: [
+          ["Kapsamlı başlangıç değerlendirmesi ve kişisel yol haritası", "6.500 TL"],
+          ["Aktif regülasyon, duyu, beden, oyun ve beslenme düzenlemesi", "4.000 TL"],
+          ["12 günlük inceleme, telefon görüşmeleri ve plan güncellemeleri", "4.500 TL"]
+        ]},
+        full: { price: "20.000 TL", vat: "+ KDV · 24.000 TL dâhil", breakdown: [
+          ["Kapsamlı başlangıç değerlendirmesi ve kişisel yol haritası", "6.500 TL"],
+          ["Aktif regülasyon, duyu, beden, oyun ve beslenme düzenlemesi", "4.000 TL"],
+          ["20 günlük inceleme, telefon görüşmeleri ve plan güncellemeleri", "6.500 TL"],
+          ["12.00–17.00 kısa WhatsApp soru desteği", "3.000 TL"]
+        ]},
+        vip: { price: "29.000 TL", vat: "+ KDV · 34.800 TL dâhil", breakdown: [
+          ["Kapsamlı başlangıç değerlendirmesi ve kişisel yol haritası", "6.500 TL"],
+          ["Aktif regülasyon, duyu, beden, oyun ve beslenme düzenlemesi", "4.000 TL"],
+          ["20 günlük inceleme, telefon görüşmeleri ve plan güncellemeleri", "6.500 TL"],
+          ["12.00–21.00 genişletilmiş WhatsApp desteği", "6.000 TL"],
+          ["Öncelikli plan yönetimi ve sınırlı kontenjan", "6.000 TL"]
+        ]}
+      },
+      current: {
+        assessment: { price: "6.500 TL", vat: "+ KDV · 7.800 TL dâhil" },
+        standard: { price: "18.000 TL", vat: "+ KDV · 21.600 TL dâhil", breakdown: [
+          ["Kapsamlı başlangıç değerlendirmesi ve kişisel yol haritası", "6.500 TL"],
+          ["Aktif regülasyon, duyu, beden, oyun ve beslenme düzenlemesi", "4.000 TL"],
+          ["12 günlük inceleme, telefon görüşmeleri ve plan güncellemeleri", "7.500 TL"]
+        ]},
+        full: { price: "24.000 TL", vat: "+ KDV · 28.800 TL dâhil", breakdown: [
+          ["Kapsamlı başlangıç değerlendirmesi ve kişisel yol haritası", "6.500 TL"],
+          ["Aktif regülasyon, duyu, beden, oyun ve beslenme düzenlemesi", "4.000 TL"],
+          ["20 günlük inceleme, telefon görüşmeleri ve plan güncellemeleri", "8.000 TL"],
+          ["12.00–17.00 kısa WhatsApp soru desteği", "5.500 TL"]
+        ]},
+        vip: { price: "33.000 TL", vat: "+ KDV · 39.600 TL dâhil", breakdown: [
+          ["Kapsamlı başlangıç değerlendirmesi ve kişisel yol haritası", "6.500 TL"],
+          ["Aktif regülasyon, duyu, beden, oyun ve beslenme düzenlemesi", "4.000 TL"],
+          ["20 günlük inceleme, telefon görüşmeleri ve plan güncellemeleri", "8.000 TL"],
+          ["12.00–21.00 genişletilmiş WhatsApp desteği", "8.500 TL"],
+          ["Öncelikli plan yönetimi ve sınırlı kontenjan", "6.000 TL"]
+        ]}
+      }
+    };
+
+    function bindAccordions() {
+      document.querySelectorAll(".accordion-trigger, .quick-toggle").forEach(button => {
+        button.addEventListener("click", () => {
+          const panel = document.getElementById(button.getAttribute("aria-controls"));
+          const willOpen = button.getAttribute("aria-expanded") !== "true";
+          if (button.closest("#package-accordions") && willOpen) {
+            button.closest("#package-accordions").querySelectorAll(".accordion-trigger[aria-expanded='true']").forEach(openButton => {
+              openButton.setAttribute("aria-expanded", "false");
+              document.getElementById(openButton.getAttribute("aria-controls")).hidden = true;
+            });
+          }
+          button.setAttribute("aria-expanded", String(willOpen));
+          panel.hidden = !willOpen;
+        });
+      });
+    }
+
+    function renderBreakdown(key, period) {
+      const container = document.querySelector(`[data-breakdown="${key}"]`);
+      const total = document.querySelector(`[data-total="${key}"]`);
+      if (!container || !priceData[period][key].breakdown) return;
+      container.innerHTML = priceData[period][key].breakdown.map(row =>
+        `<div class="value-row"><span>${row[0]}</span><strong>${row[1]}</strong></div>`
+      ).join("");
+      total.textContent = `Toplam: ${priceData[period][key].price} + KDV`;
+    }
+
+    function applyPeriod(period) {
+      Object.keys(priceData[period]).forEach(key => {
+        document.querySelectorAll(`[data-price="${key}"]`).forEach(el => el.textContent = priceData[period][key].price);
+        document.querySelectorAll(`[data-vat="${key}"]`).forEach(el => el.textContent = priceData[period][key].vat);
+        document.querySelectorAll(`[data-table-price="${key}"]`).forEach(el => el.textContent = priceData[period][key].price);
+        renderBreakdown(key, period);
+      });
+      document.querySelectorAll(".price-tab").forEach(tab => tab.setAttribute("aria-selected", String(tab.dataset.period === period)));
+      document.getElementById("price-note").textContent = period === "transition"
+        ? "Geçiş fiyatlarından yararlanabilmek için kayıt ve ödemenin 30 Eylül 2026’ya kadar tamamlanması gerekir."
+        : "Bu fiyatlar 1 Ekim 2026 tarihinden itibaren geçerlidir.";
+    }
+
+    function istanbulDateParts() {
+      const parts = new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Europe/Istanbul", year: "numeric", month: "2-digit", day: "2-digit"
+      }).formatToParts(new Date()).reduce((acc, part) => (acc[part.type] = part.value, acc), {});
+      return Number(`${parts.year}${parts.month}${parts.day}`);
+    }
+
+    bindAccordions();
+    document.querySelectorAll(".price-tab").forEach(tab => tab.addEventListener("click", () => {
+      if (!tab.disabled) applyPeriod(tab.dataset.period);
+    }));
+    const afterTransition = istanbulDateParts() >= 20261001;
+    if (afterTransition) {
+      const transitionTab = document.getElementById("transition-tab");
+      transitionTab.disabled = true;
+      transitionTab.innerHTML = "Geçiş fiyatları<br>Sona erdi";
+      applyPeriod("current");
+    } else {
+      applyPeriod("transition");
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
